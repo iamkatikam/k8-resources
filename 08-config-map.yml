@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-pod
+data:
+  COURE: "AWS DevSecOps"
+  TRAINER: "SIVA"
+  DURATION: "120 Hrs"
