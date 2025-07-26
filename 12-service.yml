@@ -8,6 +8,10 @@ metadata:
     environment: dev
 spec:
   selector:
+  ports:
+    - protocol: TCP
+      port: 80 #service port
+      targetPort: 80 #container port
 
 ---
 apiVersion: v1
@@ -22,7 +26,3 @@ spec:
   containers:
   - name: nginx
     image: nginx
-  ports:
-    - protocol: TCP
-      port: 80 #service port
-      targetPort: 80 #container port
