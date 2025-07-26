@@ -4,15 +4,15 @@ metadata:
   name: nginx
   labels:
     purpose: service-demo
-    project: roboshop
-    environment: dev
 spec:
   selector:
+    purpose: service-demo
+    project: roboshop
+    environment: dev
   ports:
     - protocol: TCP
-      port: 80 #service port
-      targetPort: 80 #container port
-
+      port: 80 # service port
+      targetPort: 80 # container port
 ---
 apiVersion: v1
 kind: Pod
