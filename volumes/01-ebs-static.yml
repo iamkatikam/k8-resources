@@ -6,8 +6,21 @@ spec:
   accessModes:
   - ReadWriteOnce
   capacity:
-    storage: 50Gi
+    storage: 20Gi
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
     volumeHandle: vol-0537d32c9209627cf
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-static
+spec:
+  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  volumeName: test-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
